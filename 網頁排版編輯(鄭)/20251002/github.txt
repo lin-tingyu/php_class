@@ -5,7 +5,7 @@ github
 4.開啟vscode (檔案變綠色)
 5.推上雲端
 	5.1存檔 git add .
-	5.2存檔 git.commit -m"init"
+	5.2存檔 git commit -m "init"
 	5.3推上雲端 git push
 下載
 第一次下載:git clone ...
