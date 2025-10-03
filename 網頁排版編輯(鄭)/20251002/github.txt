@@ -1,0 +1,15 @@
+github
+1.開repository
+2.抓repository(git clone)
+3.把本地資料放到repository(ctrl+a,ctrl+c,ctrl+v)
+4.開啟vscode (檔案變綠色)
+5.推上雲端
+	5.1存檔 git add .
+	5.2存檔 git.commit -m"init"
+	5.3推上雲端 git push
+下載
+第一次下載:git clone ...
+未來每次更新:git pull
+
+git clone https://github.com/lin-tingyu/web2025-10-02.git
+git clone https://github.com/lin-tingyu/web2025-10-02.git hello
