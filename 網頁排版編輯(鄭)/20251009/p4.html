@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人資調查表單</title>
+    <style>
+        /* 整體樣式 */
+        body {
+            font-family: Arial, 'Noto Sans TC', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        /* 表單容器 */
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* 表單欄位 */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>人資調查表單</h2>
+        <form action="/submit" method="post">
+            <!-- 年齡 -->
+            <div class="rowBox">
+                <label for="userName">姓氏:
+                <input type="text" id="userName" name="userName" placeholder="姓氏">
+                </label>
+                <label for="lastnNme">名字:
+                <input type="text" id="lastnNme" name="lastnNme" placeholder="名字">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>年齡（單選）</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="age" value="20-30" required> 20~30歲</label>
+                    <label><input type="radio" name="age" value="30-40"> 30~40歲</label>
+                    <label><input type="radio" name="age" value="40-50"> 40~50歲</label>
+                    <label><input type="radio" name="age" value="50+"> 50歲以上</label>
+                </div>
+            </div>
+
+            <!-- 兵役狀況 -->
+            <div class="form-group">
+                <label>兵役狀況（單選）</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="military" value="役畢" required> 役畢</label>
+                    <label><input type="radio" name="military" value="未役畢"> 未役畢</label>
+                </div>
+            </div>
+
+            <!-- 期望薪資 -->
+            <div class="form-group">
+                <label>期望薪資（新台幣/月，單選）</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="salary" value="20000" required> 20,000</label>
+                    <label><input type="radio" name="salary" value="30000"> 30,000</label>
+                    <label><input type="radio" name="salary" value="40000"> 40,000</label>
+                    <label><input type="radio" name="salary" value="50000"> 50,000</label>
+                    <label><input type="radio" name="salary" value="60000+"> 60,000以上</label>
+                </div>
+            </div>
+
+            <!-- 提交按鈕 -->
+            <button type="submit">提交</button>
+        </form>
+    </div>
+
+    <!-- JavaScript 驗證 -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const age = document.querySelector('input[name="age"]:checked');
+            const military = document.querySelector('input[name="military"]:checked');
+            const salary = document.querySelector('input[name="salary"]:checked');
+            if (!age || !military || !salary) {
+                event.preventDefault();
+                alert('請為每個問題選擇一個選項！');
+            }
+        });
+    </script>
+</body>
+</html>
