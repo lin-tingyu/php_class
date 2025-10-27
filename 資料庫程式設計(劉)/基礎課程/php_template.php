@@ -6,8 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>php</h1>
-    <p><a href="ch1.php">第一章</a><br></p>
-    <a href="ch2.php">第二章</a>
+
+<?php
+
+
+?>
 </body>
 </html>
